@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>DESAFIO OPCIONAL: "mi_contador"</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta author="Pedro Eduardo Donoso Ramírez" />
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container mt-5 bg-primary pt-4 pb-3 pl-5">
+      <div id="app">
+        <div class="bg-warning pl-5 mr-5 mb-3">
+          <h3>Contador de minutos</h3>
+        </div>
+
+        <div class="bg-white mr-5 pt-1 pl-5 pb-1 mb-3">
+          <h4>00 : {{ mi_contador }}</h4>
+        </div>
+
+        <div class="mt-4">
+          <button class="bg-success" v-on:click="suma">
+            <strong>Suma 1 '</strong>
+          </button>
+          <button class="bg-danger" v-on:click="resta">
+            <strong>Resta 1 '</strong>
+          </button>
+          <button v-on:click="reinicio">
+            <strong>Reiniciar contador</strong>
+          </button>
+        </div>
+
+        <div class="alert alert-info mt-3 mr-5" role="alert">
+          <h4 class="alert-heading"></h4>
+          <p>
+            {{ mi_texto }}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      new Vue({
+        el: "#app",
+        data: { mi_contador: 0, mi_texto: "" },
+        methods: {
+          suma() {
+            const mi_vue = this;
+            setTimeout(() => {
+              mi_vue.mi_contador++;
+              mi_vue.mi_texto = "El contador a aumentado";
+            });
+          },
+          resta() {
+            const mi_vue = this;
+            setTimeout(() => {
+              mi_vue.mi_contador--;
+              mi_vue.mi_texto = "El contador a disminuido";
+            });
+          },
+          reinicio() {
+            const mi_vue = this;
+            setTimeout(() => {
+              mi_vue.mi_contador = 0;
+              mi_vue.mi_texto = "El contador se ha reiniciado";
+            });
+          },
+        },
+      });
+    </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
