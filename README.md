@@ -1,4 +1,4 @@
-https://pedro-donoso.github.io/OPCIONAL_CONTADOR/
+https://pedro-donoso.github.io/proyecto_contador/
 
 # Proyecto_Contador
  creando un contador
